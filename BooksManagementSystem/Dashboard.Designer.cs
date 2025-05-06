@@ -43,9 +43,11 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            home1 = new Home();
+            borrow1 = new Borrow();
+            logs1 = new Logs();
             category1 = new Category();
             books1 = new Books();
+            home1 = new Home();
             panelTopDashboard.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -126,6 +128,7 @@
             button6.Text = "       LOG OUT";
             button6.TextAlign = ContentAlignment.MiddleLeft;
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -142,6 +145,7 @@
             button5.Text = "       LOGS";
             button5.TextAlign = ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -158,6 +162,7 @@
             button4.Text = "       BORROW";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -233,6 +238,8 @@
             // panel2
             // 
             panel2.Controls.Add(home1);
+            panel2.Controls.Add(borrow1);
+            panel2.Controls.Add(logs1);
             panel2.Controls.Add(category1);
             panel2.Controls.Add(books1);
             panel2.Dock = DockStyle.Fill;
@@ -241,12 +248,19 @@
             panel2.Size = new Size(947, 660);
             panel2.TabIndex = 2;
             // 
-            // home1
+            // borrow1
             // 
-            home1.Location = new Point(0, 0);
-            home1.Name = "home1";
-            home1.Size = new Size(947, 660);
-            home1.TabIndex = 8;
+            borrow1.Location = new Point(0, 0);
+            borrow1.Name = "borrow1";
+            borrow1.Size = new Size(947, 660);
+            borrow1.TabIndex = 8;
+            // 
+            // logs1
+            // 
+            logs1.Location = new Point(0, 0);
+            logs1.Name = "logs1";
+            logs1.Size = new Size(947, 662);
+            logs1.TabIndex = 8;
             // 
             // category1
             // 
@@ -262,6 +276,13 @@
             books1.Name = "books1";
             books1.Size = new Size(944, 660);
             books1.TabIndex = 0;
+            // 
+            // home1
+            // 
+            home1.Location = new Point(0, 0);
+            home1.Name = "home1";
+            home1.Size = new Size(947, 660);
+            home1.TabIndex = 8;
             // 
             // Dashboard
             // 
@@ -303,6 +324,8 @@
         private Panel panel2;
         private Books books1;
         private Category category1;
+        private Borrow borrow1;
+        private Logs logs1;
         private Home home1;
     }
 }
