@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            comboBox2 = new ComboBox();
-            button5 = new Button();
-            textBox2 = new TextBox();
-            dataGridView1 = new DataGridView();
+            label6 = new Label();
+            filterBooks = new ComboBox();
+            searchBttnBooks = new Button();
+            searchBooks = new TextBox();
+            booksDataGrid = new DataGridView();
             label1 = new Label();
             panel2 = new Panel();
-            button4 = new Button();
-            comboBox1 = new ComboBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            bookId = new Label();
+            bookIdTxt = new TextBox();
+            clearBook = new Button();
+            bookCategoryMenu = new ComboBox();
+            deleteBook = new Button();
+            updateBook = new Button();
+            addBook = new Button();
             label5 = new Label();
-            textBox4 = new TextBox();
+            bookYearTxt = new TextBox();
             label4 = new Label();
-            textBox3 = new TextBox();
+            bookIsbnTxt = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            label6 = new Label();
-            label7 = new Label();
-            textBox5 = new TextBox();
+            bookTitleTxt = new TextBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)booksDataGrid).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,10 +59,10 @@
             // 
             panel1.BackColor = Color.PowderBlue;
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(comboBox2);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(filterBooks);
+            panel1.Controls.Add(searchBttnBooks);
+            panel1.Controls.Add(searchBooks);
+            panel1.Controls.Add(booksDataGrid);
             panel1.Controls.Add(label1);
             panel1.ForeColor = SystemColors.ControlText;
             panel1.Location = new Point(17, 24);
@@ -70,45 +70,62 @@
             panel1.Size = new Size(910, 388);
             panel1.TabIndex = 0;
             // 
-            // comboBox2
+            // label6
             // 
-            comboBox2.Cursor = Cursors.Hand;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Publication Year", "Author", "Category" });
-            comboBox2.Location = new Point(358, 14);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 28);
-            comboBox2.TabIndex = 13;
+            label6.AutoSize = true;
+            label6.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(303, 18);
+            label6.Name = "label6";
+            label6.Size = new Size(49, 18);
+            label6.TabIndex = 13;
+            label6.Text = "Filter";
+            label6.Visible = false;
             // 
-            // button5
+            // filterBooks
             // 
-            button5.BackColor = Color.CadetBlue;
-            button5.Cursor = Cursors.Hand;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button5.Location = new Point(750, 14);
-            button5.Name = "button5";
-            button5.Size = new Size(104, 28);
-            button5.TabIndex = 13;
-            button5.Text = "SEARCH";
-            button5.UseVisualStyleBackColor = false;
+            filterBooks.Cursor = Cursors.Hand;
+            filterBooks.FormattingEnabled = true;
+            filterBooks.Items.AddRange(new object[] { "Publication Year", "Author", "Category" });
+            filterBooks.Location = new Point(358, 14);
+            filterBooks.Name = "filterBooks";
+            filterBooks.Size = new Size(151, 28);
+            filterBooks.TabIndex = 13;
+            filterBooks.Visible = false;
             // 
-            // textBox2
+            // searchBttnBooks
             // 
-            textBox2.Cursor = Cursors.IBeam;
-            textBox2.Location = new Point(541, 15);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(191, 27);
-            textBox2.TabIndex = 13;
+            searchBttnBooks.BackColor = Color.CadetBlue;
+            searchBttnBooks.Cursor = Cursors.Hand;
+            searchBttnBooks.FlatStyle = FlatStyle.Flat;
+            searchBttnBooks.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            searchBttnBooks.Location = new Point(750, 14);
+            searchBttnBooks.Name = "searchBttnBooks";
+            searchBttnBooks.Size = new Size(104, 28);
+            searchBttnBooks.TabIndex = 13;
+            searchBttnBooks.Text = "SEARCH";
+            searchBttnBooks.UseVisualStyleBackColor = false;
+            searchBttnBooks.Visible = false;
             // 
-            // dataGridView1
+            // searchBooks
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(38, 56);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(834, 304);
-            dataGridView1.TabIndex = 1;
+            searchBooks.Cursor = Cursors.IBeam;
+            searchBooks.Location = new Point(541, 15);
+            searchBooks.Name = "searchBooks";
+            searchBooks.Size = new Size(191, 27);
+            searchBooks.TabIndex = 13;
+            searchBooks.Visible = false;
+            // 
+            // booksDataGrid
+            // 
+            booksDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            booksDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            booksDataGrid.Location = new Point(75, 62);
+            booksDataGrid.Name = "booksDataGrid";
+            booksDataGrid.ReadOnly = true;
+            booksDataGrid.RowHeadersWidth = 51;
+            booksDataGrid.Size = new Size(758, 304);
+            booksDataGrid.TabIndex = 1;
+            booksDataGrid.CellClick += booksDataGrid_CellClick;
             // 
             // label1
             // 
@@ -123,128 +140,151 @@
             // panel2
             // 
             panel2.BackColor = Color.PowderBlue;
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(textBox5);
-            panel2.Controls.Add(button4);
-            panel2.Controls.Add(comboBox1);
-            panel2.Controls.Add(button3);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(bookId);
+            panel2.Controls.Add(bookIdTxt);
+            panel2.Controls.Add(clearBook);
+            panel2.Controls.Add(bookCategoryMenu);
+            panel2.Controls.Add(deleteBook);
+            panel2.Controls.Add(updateBook);
+            panel2.Controls.Add(addBook);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(textBox4);
+            panel2.Controls.Add(bookYearTxt);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(bookIsbnTxt);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(bookTitleTxt);
             panel2.Location = new Point(17, 431);
             panel2.Name = "panel2";
             panel2.Size = new Size(910, 202);
             panel2.TabIndex = 1;
             // 
-            // button4
+            // bookId
             // 
-            button4.BackColor = Color.CadetBlue;
-            button4.Cursor = Cursors.Hand;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button4.Location = new Point(486, 111);
-            button4.Name = "button4";
-            button4.Size = new Size(104, 40);
-            button4.TabIndex = 12;
-            button4.Text = "CLEAR";
-            button4.UseVisualStyleBackColor = false;
+            bookId.AutoSize = true;
+            bookId.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bookId.Location = new Point(38, 11);
+            bookId.Name = "bookId";
+            bookId.Size = new Size(26, 18);
+            bookId.TabIndex = 14;
+            bookId.Text = "ID";
             // 
-            // comboBox1
+            // bookIdTxt
             // 
-            comboBox1.Cursor = Cursors.Hand;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Adventure", "Biography", "Fantasy", "History", "Horror", "Mystery", "Romance", "Science Fiction", "Self-Help", "Technology" });
-            comboBox1.Location = new Point(691, 115);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(191, 28);
-            comboBox1.TabIndex = 11;
+            bookIdTxt.Cursor = Cursors.IBeam;
+            bookIdTxt.Location = new Point(38, 39);
+            bookIdTxt.Name = "bookIdTxt";
+            bookIdTxt.ReadOnly = true;
+            bookIdTxt.Size = new Size(56, 27);
+            bookIdTxt.TabIndex = 13;
             // 
-            // button3
+            // clearBook
             // 
-            button3.BackColor = Color.CadetBlue;
-            button3.Cursor = Cursors.Hand;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button3.Location = new Point(358, 111);
-            button3.Name = "button3";
-            button3.Size = new Size(104, 40);
-            button3.TabIndex = 10;
-            button3.Text = "DELETE";
-            button3.UseVisualStyleBackColor = false;
+            clearBook.BackColor = Color.CadetBlue;
+            clearBook.Cursor = Cursors.Hand;
+            clearBook.FlatStyle = FlatStyle.Flat;
+            clearBook.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            clearBook.Location = new Point(596, 104);
+            clearBook.Name = "clearBook";
+            clearBook.Size = new Size(104, 40);
+            clearBook.TabIndex = 12;
+            clearBook.Text = "CLEAR";
+            clearBook.UseVisualStyleBackColor = false;
+            clearBook.Click += clearBook_Click;
             // 
-            // button2
+            // bookCategoryMenu
             // 
-            button2.BackColor = Color.CadetBlue;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button2.Location = new Point(228, 111);
-            button2.Name = "button2";
-            button2.Size = new Size(104, 40);
-            button2.TabIndex = 9;
-            button2.Text = "UPDATE";
-            button2.UseVisualStyleBackColor = false;
+            bookCategoryMenu.Cursor = Cursors.Hand;
+            bookCategoryMenu.FormattingEnabled = true;
+            bookCategoryMenu.Items.AddRange(new object[] { "Fiction", "Non-Fiction", "Science Fiction (Sci-Fi)", "Fantasy", "Mystery / Thriller", "Romance", "Historical Fiction", "Biography / Autobiography", "Self-Help", "Health & Wellness", "Travel", "Science", "Technology", "Mathematics", "Engineering", "Business / Economics", "Education", "Philosophy", "Psychology", "Religion / Spirituality", "Politics / Government", "Law", "Art & Photography", "Cooking / Food", "Comics / Graphic Novels", "Children’s Books", "Young Adult (YA)", "Poetry", "Drama / Plays", "Language & Linguistics", "True Crime", "Hobbies / Crafts", "Gardening / Nature", "Sports & Recreation", "Parenting & Families", "Music", "Computer & IT", "Journalism / Media", "Short Stories", "Dictionaries / Encyclopedias" });
+            bookCategoryMenu.Location = new Point(688, 38);
+            bookCategoryMenu.Name = "bookCategoryMenu";
+            bookCategoryMenu.Size = new Size(191, 28);
+            bookCategoryMenu.TabIndex = 11;
             // 
-            // button1
+            // deleteBook
             // 
-            button1.BackColor = Color.CadetBlue;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button1.Location = new Point(96, 111);
-            button1.Name = "button1";
-            button1.Size = new Size(104, 40);
-            button1.TabIndex = 8;
-            button1.Text = "ADD";
-            button1.UseVisualStyleBackColor = false;
+            deleteBook.BackColor = Color.CadetBlue;
+            deleteBook.Cursor = Cursors.Hand;
+            deleteBook.FlatStyle = FlatStyle.Flat;
+            deleteBook.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            deleteBook.Location = new Point(468, 104);
+            deleteBook.Name = "deleteBook";
+            deleteBook.Size = new Size(104, 40);
+            deleteBook.TabIndex = 10;
+            deleteBook.Text = "DELETE";
+            deleteBook.UseVisualStyleBackColor = false;
+            deleteBook.Click += deleteBook_Click;
+            // 
+            // updateBook
+            // 
+            updateBook.BackColor = Color.CadetBlue;
+            updateBook.Cursor = Cursors.Hand;
+            updateBook.FlatStyle = FlatStyle.Flat;
+            updateBook.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            updateBook.Location = new Point(338, 104);
+            updateBook.Name = "updateBook";
+            updateBook.Size = new Size(104, 40);
+            updateBook.TabIndex = 9;
+            updateBook.Text = "UPDATE";
+            updateBook.UseVisualStyleBackColor = false;
+            updateBook.Click += updateBook_Click;
+            // 
+            // addBook
+            // 
+            addBook.BackColor = Color.CadetBlue;
+            addBook.Cursor = Cursors.Hand;
+            addBook.FlatStyle = FlatStyle.Flat;
+            addBook.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            addBook.Location = new Point(206, 104);
+            addBook.Name = "addBook";
+            addBook.Size = new Size(104, 40);
+            addBook.TabIndex = 8;
+            addBook.Text = "ADD";
+            addBook.UseVisualStyleBackColor = false;
+            addBook.Click += addBook_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(691, 12);
+            label5.Location = new Point(541, 11);
             label5.Name = "label5";
             label5.Size = new Size(132, 18);
             label5.TabIndex = 7;
             label5.Text = "Publication Year";
             // 
-            // textBox4
+            // bookYearTxt
             // 
-            textBox4.Cursor = Cursors.IBeam;
-            textBox4.Location = new Point(691, 39);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(191, 27);
-            textBox4.TabIndex = 6;
+            bookYearTxt.Cursor = Cursors.IBeam;
+            bookYearTxt.Location = new Point(557, 38);
+            bookYearTxt.Name = "bookYearTxt";
+            bookYearTxt.Size = new Size(101, 27);
+            bookYearTxt.TabIndex = 6;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(475, 12);
+            label4.Location = new Point(338, 12);
             label4.Name = "label4";
             label4.Size = new Size(47, 18);
             label4.TabIndex = 5;
             label4.Text = "ISBN";
             // 
-            // textBox3
+            // bookIsbnTxt
             // 
-            textBox3.Cursor = Cursors.IBeam;
-            textBox3.Location = new Point(475, 39);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(191, 27);
-            textBox3.TabIndex = 4;
+            bookIsbnTxt.Cursor = Cursors.IBeam;
+            bookIsbnTxt.Location = new Point(338, 39);
+            bookIsbnTxt.Name = "bookIsbnTxt";
+            bookIsbnTxt.Size = new Size(191, 27);
+            bookIsbnTxt.TabIndex = 4;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(691, 89);
+            label3.Location = new Point(688, 9);
             label3.Name = "label3";
             label3.Size = new Size(76, 18);
             label3.TabIndex = 3;
@@ -254,47 +294,19 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(38, 12);
+            label2.Location = new Point(119, 11);
             label2.Name = "label2";
             label2.Size = new Size(42, 18);
             label2.TabIndex = 1;
             label2.Text = "Title";
             // 
-            // textBox1
+            // bookTitleTxt
             // 
-            textBox1.Cursor = Cursors.IBeam;
-            textBox1.Location = new Point(38, 39);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(191, 27);
-            textBox1.TabIndex = 0;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(303, 18);
-            label6.Name = "label6";
-            label6.Size = new Size(49, 18);
-            label6.TabIndex = 13;
-            label6.Text = "Filter";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(259, 12);
-            label7.Name = "label7";
-            label7.Size = new Size(58, 18);
-            label7.TabIndex = 14;
-            label7.Text = "Author";
-            // 
-            // textBox5
-            // 
-            textBox5.Cursor = Cursors.IBeam;
-            textBox5.Location = new Point(259, 39);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(191, 27);
-            textBox5.TabIndex = 13;
+            bookTitleTxt.Cursor = Cursors.IBeam;
+            bookTitleTxt.Location = new Point(119, 39);
+            bookTitleTxt.Name = "bookTitleTxt";
+            bookTitleTxt.Size = new Size(191, 27);
+            bookTitleTxt.TabIndex = 0;
             // 
             // Books
             // 
@@ -305,9 +317,10 @@
             Controls.Add(panel1);
             Name = "Books";
             Size = new Size(947, 660);
+            Load += Books_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)booksDataGrid).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -318,24 +331,24 @@
         private Panel panel1;
         private Label label1;
         private Panel panel2;
-        private DataGridView dataGridView1;
+        private DataGridView booksDataGrid;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox bookTitleTxt;
         private Label label5;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox bookIsbnTxt;
         private Label label3;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private ComboBox comboBox1;
-        private TextBox textBox4;
-        private Button button4;
-        private ComboBox comboBox2;
-        private Button button5;
-        private TextBox textBox2;
+        private Button deleteBook;
+        private Button updateBook;
+        private Button addBook;
+        private ComboBox bookCategoryMenu;
+        private TextBox bookYearTxt;
+        private Button clearBook;
+        private ComboBox filterBooks;
+        private Button searchBttnBooks;
+        private TextBox searchBooks;
         private Label label6;
-        private Label label7;
-        private TextBox textBox5;
+        private Label bookId;
+        private TextBox bookIdTxt;
     }
 }

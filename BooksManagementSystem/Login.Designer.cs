@@ -34,12 +34,14 @@
             labelTitle = new Label();
             userTextBox = new Label();
             labelHeading1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            userLogin = new TextBox();
+            passwordLogin = new TextBox();
             passTxtBox = new Label();
             bttnLogin = new Button();
             labelNote = new Label();
             labelClose = new Label();
+            createBttn = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -93,24 +95,24 @@
             labelHeading1.TabIndex = 2;
             labelHeading1.Text = "Login as Admin";
             // 
-            // textBox1
+            // userLogin
             // 
-            textBox1.Cursor = Cursors.IBeam;
-            textBox1.Font = new Font("Tahoma", 11F);
-            textBox1.Location = new Point(366, 188);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(359, 30);
-            textBox1.TabIndex = 3;
+            userLogin.Cursor = Cursors.IBeam;
+            userLogin.Font = new Font("Tahoma", 11F);
+            userLogin.Location = new Point(366, 188);
+            userLogin.Name = "userLogin";
+            userLogin.Size = new Size(359, 30);
+            userLogin.TabIndex = 3;
             // 
-            // textBox2
+            // passwordLogin
             // 
-            textBox2.Cursor = Cursors.IBeam;
-            textBox2.Font = new Font("Tahoma", 11F);
-            textBox2.Location = new Point(366, 268);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(359, 30);
-            textBox2.TabIndex = 4;
-            textBox2.UseSystemPasswordChar = true;
+            passwordLogin.Cursor = Cursors.IBeam;
+            passwordLogin.Font = new Font("Tahoma", 11F);
+            passwordLogin.Location = new Point(366, 268);
+            passwordLogin.Name = "passwordLogin";
+            passwordLogin.Size = new Size(359, 30);
+            passwordLogin.TabIndex = 4;
+            passwordLogin.UseSystemPasswordChar = true;
             // 
             // passTxtBox
             // 
@@ -130,7 +132,7 @@
             bttnLogin.ForeColor = Color.Black;
             bttnLogin.Location = new Point(366, 335);
             bttnLogin.Name = "bttnLogin";
-            bttnLogin.Size = new Size(126, 38);
+            bttnLogin.Size = new Size(359, 38);
             bttnLogin.TabIndex = 6;
             bttnLogin.Text = "LOGIN";
             bttnLogin.UseVisualStyleBackColor = false;
@@ -139,11 +141,14 @@
             // labelNote
             // 
             labelNote.AutoSize = true;
-            labelNote.Location = new Point(424, 308);
+            labelNote.BackColor = Color.Transparent;
+            labelNote.ForeColor = Color.Red;
+            labelNote.Location = new Point(389, 308);
             labelNote.Name = "labelNote";
             labelNote.Size = new Size(243, 20);
             labelNote.TabIndex = 7;
             labelNote.Text = "* Incorrect username or password. *";
+            labelNote.Visible = false;
             // 
             // labelClose
             // 
@@ -157,17 +162,40 @@
             labelClose.Text = "X";
             labelClose.Click += labelClose_Click;
             // 
+            // createBttn
+            // 
+            createBttn.AutoSize = true;
+            createBttn.Cursor = Cursors.Hand;
+            createBttn.Location = new Point(487, 387);
+            createBttn.Name = "createBttn";
+            createBttn.Size = new Size(121, 20);
+            createBttn.TabIndex = 9;
+            createBttn.Text = "Register Account";
+            createBttn.Click += label1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(487, 432);
+            label1.Name = "label1";
+            label1.Size = new Size(123, 20);
+            label1.TabIndex = 10;
+            label1.Text = "Forgot password.";
+            label1.Click += label1_Click_1;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(779, 504);
+            Controls.Add(label1);
+            Controls.Add(createBttn);
             Controls.Add(labelClose);
             Controls.Add(labelNote);
             Controls.Add(bttnLogin);
             Controls.Add(passTxtBox);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(passwordLogin);
+            Controls.Add(userLogin);
             Controls.Add(labelHeading1);
             Controls.Add(userTextBox);
             Controls.Add(panel1);
@@ -187,13 +215,15 @@
         private Panel panel1;
         private Label userTextBox;
         private Label labelHeading1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox userLogin;
+        private TextBox passwordLogin;
         private Label passTxtBox;
         private Button bttnLogin;
         private Label labelNote;
         private Label labelTitle;
         private PictureBox pictureBox1;
         private Label labelClose;
+        private Label createBttn;
+        private Label label1;
     }
 }

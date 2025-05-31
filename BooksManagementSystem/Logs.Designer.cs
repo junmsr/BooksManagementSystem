@@ -29,298 +29,110 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            tabControl1 = new TabControl();
-            tabPage2 = new TabPage();
-            tabPage3 = new TabPage();
-            tabPage1 = new TabPage();
-            dataGridView1 = new DataGridView();
-            button5 = new Button();
-            textBox3 = new TextBox();
-            panel2 = new Panel();
-            tabControl2 = new TabControl();
-            tabPage4 = new TabPage();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            dataGridView2 = new DataGridView();
-            tabPage5 = new TabPage();
-            tabPage6 = new TabPage();
-            panel3 = new Panel();
-            tabControl3 = new TabControl();
-            tabPage7 = new TabPage();
-            button2 = new Button();
-            textBox2 = new TextBox();
-            dataGridView3 = new DataGridView();
-            tabPage8 = new TabPage();
-            tabPage9 = new TabPage();
+            comboBox1 = new ComboBox();
+            label6 = new Label();
+            export = new Button();
+            label2 = new Label();
+            addBttnLog = new Button();
+            searchLog = new TextBox();
+            returnedBooks = new DataGridView();
             panel1.SuspendLayout();
-            tabControl1.SuspendLayout();
-            tabPage2.SuspendLayout();
-            tabPage3.SuspendLayout();
-            tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel2.SuspendLayout();
-            tabControl2.SuspendLayout();
-            tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            panel3.SuspendLayout();
-            tabControl3.SuspendLayout();
-            tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)returnedBooks).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.PowderBlue;
-            panel1.Controls.Add(tabControl1);
+            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(export);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(addBttnLog);
+            panel1.Controls.Add(searchLog);
+            panel1.Controls.Add(returnedBooks);
             panel1.Location = new Point(12, 13);
             panel1.Name = "panel1";
             panel1.Size = new Size(915, 627);
             panel1.TabIndex = 0;
             // 
-            // tabControl1
+            // comboBox1
             // 
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Cursor = Cursors.Hand;
-            tabControl1.Location = new Point(13, 13);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(885, 588);
-            tabControl1.TabIndex = 0;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Fiction", "Non-Fiction", "Science Fiction (Sci-Fi)", "Fantasy", "Mystery / Thriller", "Romance", "Historical Fiction", "Biography / Autobiography", "Self-Help", "Health & Wellness", "Travel", "Science", "Technology", "Mathematics", "Engineering", "Business / Economics", "Education", "Philosophy", "Psychology", "Religion / Spirituality", "Politics / Government", "Law", "Art & Photography", "Cooking / Food", "Comics / Graphic Novels", "Children’s Books", "Young Adult (YA)", "Poetry", "Drama / Plays", "Language & Linguistics", "True Crime", "Hobbies / Crafts", "Gardening / Nature", "Sports & Recreation", "Parenting & Families", "Music", "Computer & IT", "Journalism / Media", "Short Stories", "Dictionaries / Encyclopedias" });
+            comboBox1.Location = new Point(385, 57);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 35;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // tabPage2
+            // label6
             // 
-            tabPage2.Controls.Add(button5);
-            tabPage2.Controls.Add(textBox3);
-            tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(877, 555);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Added Books";
-            tabPage2.UseVisualStyleBackColor = true;
+            label6.AutoSize = true;
+            label6.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(330, 61);
+            label6.Name = "label6";
+            label6.Size = new Size(49, 18);
+            label6.TabIndex = 34;
+            label6.Text = "Filter";
             // 
-            // tabPage3
+            // export
             // 
-            tabPage3.Controls.Add(panel2);
-            tabPage3.Location = new Point(4, 29);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(877, 555);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Updated Books";
-            tabPage3.UseVisualStyleBackColor = true;
+            export.BackColor = Color.CadetBlue;
+            export.Cursor = Cursors.Hand;
+            export.FlatStyle = FlatStyle.Flat;
+            export.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            export.Location = new Point(342, 546);
+            export.Name = "export";
+            export.Size = new Size(209, 49);
+            export.TabIndex = 32;
+            export.Text = "Export to MS Excel";
+            export.UseVisualStyleBackColor = false;
+            export.Click += export_Click;
             // 
-            // tabPage1
+            // label2
             // 
-            tabPage1.Controls.Add(panel3);
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(877, 555);
-            tabPage1.TabIndex = 3;
-            tabPage1.Text = "Deleted Books";
-            tabPage1.UseVisualStyleBackColor = true;
+            label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 14F, FontStyle.Bold);
+            label2.Location = new Point(25, 53);
+            label2.Name = "label2";
+            label2.Size = new Size(265, 29);
+            label2.TabIndex = 31;
+            label2.Text = "Returned Books Logs";
+            label2.Click += label2_Click;
             // 
-            // dataGridView1
+            // addBttnLog
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(31, 70);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(819, 464);
-            dataGridView1.TabIndex = 0;
+            addBttnLog.BackColor = Color.CadetBlue;
+            addBttnLog.Cursor = Cursors.Hand;
+            addBttnLog.FlatStyle = FlatStyle.Flat;
+            addBttnLog.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            addBttnLog.Location = new Point(754, 58);
+            addBttnLog.Name = "addBttnLog";
+            addBttnLog.Size = new Size(104, 28);
+            addBttnLog.TabIndex = 30;
+            addBttnLog.Text = "SEARCH";
+            addBttnLog.UseVisualStyleBackColor = false;
+            addBttnLog.TextChanged += addBttnLog_TextChanged;
             // 
-            // button5
+            // searchLog
             // 
-            button5.BackColor = Color.CadetBlue;
-            button5.Cursor = Cursors.Hand;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button5.Location = new Point(721, 22);
-            button5.Name = "button5";
-            button5.Size = new Size(104, 28);
-            button5.TabIndex = 30;
-            button5.Text = "SEARCH";
-            button5.UseVisualStyleBackColor = false;
+            searchLog.Cursor = Cursors.IBeam;
+            searchLog.Location = new Point(557, 58);
+            searchLog.Name = "searchLog";
+            searchLog.Size = new Size(191, 27);
+            searchLog.TabIndex = 29;
+            searchLog.KeyPress += searchLog_KeyPress;
             // 
-            // textBox3
+            // returnedBooks
             // 
-            textBox3.Cursor = Cursors.IBeam;
-            textBox3.Location = new Point(519, 22);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(191, 27);
-            textBox3.TabIndex = 29;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.PowderBlue;
-            panel2.Controls.Add(tabControl2);
-            panel2.Location = new Point(-19, -36);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(915, 627);
-            panel2.TabIndex = 1;
-            // 
-            // tabControl2
-            // 
-            tabControl2.Controls.Add(tabPage4);
-            tabControl2.Controls.Add(tabPage5);
-            tabControl2.Controls.Add(tabPage6);
-            tabControl2.Cursor = Cursors.Hand;
-            tabControl2.Location = new Point(13, 13);
-            tabControl2.Name = "tabControl2";
-            tabControl2.SelectedIndex = 0;
-            tabControl2.Size = new Size(885, 588);
-            tabControl2.TabIndex = 0;
-            // 
-            // tabPage4
-            // 
-            tabPage4.Controls.Add(button1);
-            tabPage4.Controls.Add(textBox1);
-            tabPage4.Controls.Add(dataGridView2);
-            tabPage4.Location = new Point(4, 29);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(877, 555);
-            tabPage4.TabIndex = 1;
-            tabPage4.Text = "Added Books";
-            tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.CadetBlue;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button1.Location = new Point(721, 22);
-            button1.Name = "button1";
-            button1.Size = new Size(104, 28);
-            button1.TabIndex = 30;
-            button1.Text = "SEARCH";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Cursor = Cursors.IBeam;
-            textBox1.Location = new Point(519, 22);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(191, 27);
-            textBox1.TabIndex = 29;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(31, 70);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(819, 464);
-            dataGridView2.TabIndex = 0;
-            // 
-            // tabPage5
-            // 
-            tabPage5.Location = new Point(4, 29);
-            tabPage5.Name = "tabPage5";
-            tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(877, 555);
-            tabPage5.TabIndex = 2;
-            tabPage5.Text = "Updated Books";
-            tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            tabPage6.Location = new Point(4, 29);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(877, 555);
-            tabPage6.TabIndex = 3;
-            tabPage6.Text = "Deleted Books";
-            tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.PowderBlue;
-            panel3.Controls.Add(tabControl3);
-            panel3.Location = new Point(-19, -36);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(915, 627);
-            panel3.TabIndex = 1;
-            // 
-            // tabControl3
-            // 
-            tabControl3.Controls.Add(tabPage7);
-            tabControl3.Controls.Add(tabPage8);
-            tabControl3.Controls.Add(tabPage9);
-            tabControl3.Cursor = Cursors.Hand;
-            tabControl3.Location = new Point(13, 13);
-            tabControl3.Name = "tabControl3";
-            tabControl3.SelectedIndex = 0;
-            tabControl3.Size = new Size(885, 588);
-            tabControl3.TabIndex = 0;
-            // 
-            // tabPage7
-            // 
-            tabPage7.Controls.Add(button2);
-            tabPage7.Controls.Add(textBox2);
-            tabPage7.Controls.Add(dataGridView3);
-            tabPage7.Location = new Point(4, 29);
-            tabPage7.Name = "tabPage7";
-            tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(877, 555);
-            tabPage7.TabIndex = 1;
-            tabPage7.Text = "Added Books";
-            tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.CadetBlue;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button2.Location = new Point(721, 22);
-            button2.Name = "button2";
-            button2.Size = new Size(104, 28);
-            button2.TabIndex = 30;
-            button2.Text = "SEARCH";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // textBox2
-            // 
-            textBox2.Cursor = Cursors.IBeam;
-            textBox2.Location = new Point(519, 22);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(191, 27);
-            textBox2.TabIndex = 29;
-            // 
-            // dataGridView3
-            // 
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(31, 70);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.Size = new Size(819, 464);
-            dataGridView3.TabIndex = 0;
-            // 
-            // tabPage8
-            // 
-            tabPage8.Location = new Point(4, 29);
-            tabPage8.Name = "tabPage8";
-            tabPage8.Padding = new Padding(3);
-            tabPage8.Size = new Size(877, 555);
-            tabPage8.TabIndex = 2;
-            tabPage8.Text = "Updated Books";
-            tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // tabPage9
-            // 
-            tabPage9.Location = new Point(4, 29);
-            tabPage9.Name = "tabPage9";
-            tabPage9.Padding = new Padding(3);
-            tabPage9.Size = new Size(877, 555);
-            tabPage9.TabIndex = 3;
-            tabPage9.Text = "Deleted Books";
-            tabPage9.UseVisualStyleBackColor = true;
+            returnedBooks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            returnedBooks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            returnedBooks.Location = new Point(44, 121);
+            returnedBooks.Name = "returnedBooks";
+            returnedBooks.ReadOnly = true;
+            returnedBooks.RowHeadersWidth = 51;
+            returnedBooks.Size = new Size(819, 405);
+            returnedBooks.TabIndex = 0;
             // 
             // Logs
             // 
@@ -329,51 +141,22 @@
             Controls.Add(panel1);
             Name = "Logs";
             Size = new Size(942, 655);
+            Load += Logs_Load;
             panel1.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
-            tabPage3.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel2.ResumeLayout(false);
-            tabControl2.ResumeLayout(false);
-            tabPage4.ResumeLayout(false);
-            tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            panel3.ResumeLayout(false);
-            tabControl3.ResumeLayout(false);
-            tabPage7.ResumeLayout(false);
-            tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)returnedBooks).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private TabControl tabControl1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
-        private DataGridView dataGridView1;
-        private TabPage tabPage1;
-        private Button button5;
-        private TextBox textBox3;
-        private Panel panel2;
-        private TabControl tabControl2;
-        private TabPage tabPage4;
-        private Button button1;
-        private TextBox textBox1;
-        private DataGridView dataGridView2;
-        private TabPage tabPage5;
-        private TabPage tabPage6;
-        private Panel panel3;
-        private TabControl tabControl3;
-        private TabPage tabPage7;
-        private Button button2;
-        private TextBox textBox2;
-        private DataGridView dataGridView3;
-        private TabPage tabPage8;
-        private TabPage tabPage9;
+        private Button addBttnLog;
+        private TextBox searchLog;
+        private DataGridView returnedBooks;
+        private Label label2;
+        private Button export;
+        private Label label6;
+        private ComboBox comboBox1;
     }
 }

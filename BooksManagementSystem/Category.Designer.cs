@@ -29,82 +29,85 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            textBox1 = new TextBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            categoryTxt = new TextBox();
+            deleteCategory = new Button();
+            updateCategory = new Button();
+            addCategory = new Button();
             label1 = new Label();
             panel2 = new Panel();
-            dataGridView1 = new DataGridView();
+            dataGridCategory = new DataGridView();
             label = new Label();
             panel3 = new Panel();
-            textBox2 = new TextBox();
-            button6 = new Button();
+            searchCategoryTxt = new TextBox();
+            searchCategoryBttn = new Button();
             label2 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridCategory).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.PowderBlue;
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(categoryTxt);
+            panel1.Controls.Add(deleteCategory);
+            panel1.Controls.Add(updateCategory);
+            panel1.Controls.Add(addCategory);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(583, 244);
             panel1.Name = "panel1";
             panel1.Size = new Size(346, 388);
             panel1.TabIndex = 0;
             // 
-            // textBox1
+            // categoryTxt
             // 
-            textBox1.Location = new Point(35, 71);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(262, 27);
-            textBox1.TabIndex = 12;
+            categoryTxt.Location = new Point(35, 71);
+            categoryTxt.Name = "categoryTxt";
+            categoryTxt.Size = new Size(262, 27);
+            categoryTxt.TabIndex = 12;
             // 
-            // button3
+            // deleteCategory
             // 
-            button3.BackColor = Color.CadetBlue;
-            button3.Cursor = Cursors.Hand;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button3.Location = new Point(116, 196);
-            button3.Name = "button3";
-            button3.Size = new Size(104, 40);
-            button3.TabIndex = 11;
-            button3.Text = "DELETE";
-            button3.UseVisualStyleBackColor = false;
+            deleteCategory.BackColor = Color.CadetBlue;
+            deleteCategory.Cursor = Cursors.Hand;
+            deleteCategory.FlatStyle = FlatStyle.Flat;
+            deleteCategory.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            deleteCategory.Location = new Point(175, 139);
+            deleteCategory.Name = "deleteCategory";
+            deleteCategory.Size = new Size(104, 40);
+            deleteCategory.TabIndex = 11;
+            deleteCategory.Text = "DELETE";
+            deleteCategory.UseVisualStyleBackColor = false;
+            deleteCategory.Click += deleteCategory_Click;
             // 
-            // button2
+            // updateCategory
             // 
-            button2.BackColor = Color.CadetBlue;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button2.Location = new Point(180, 139);
-            button2.Name = "button2";
-            button2.Size = new Size(104, 40);
-            button2.TabIndex = 10;
-            button2.Text = "UPDATE";
-            button2.UseVisualStyleBackColor = false;
+            updateCategory.BackColor = Color.CadetBlue;
+            updateCategory.Cursor = Cursors.Hand;
+            updateCategory.FlatStyle = FlatStyle.Flat;
+            updateCategory.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            updateCategory.Location = new Point(121, 197);
+            updateCategory.Name = "updateCategory";
+            updateCategory.Size = new Size(104, 40);
+            updateCategory.TabIndex = 10;
+            updateCategory.Text = "UPDATE";
+            updateCategory.UseVisualStyleBackColor = false;
+            updateCategory.Visible = false;
             // 
-            // button1
+            // addCategory
             // 
-            button1.BackColor = Color.CadetBlue;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button1.Location = new Point(54, 139);
-            button1.Name = "button1";
-            button1.Size = new Size(104, 40);
-            button1.TabIndex = 9;
-            button1.Text = "ADD";
-            button1.UseVisualStyleBackColor = false;
+            addCategory.BackColor = Color.CadetBlue;
+            addCategory.Cursor = Cursors.Hand;
+            addCategory.FlatStyle = FlatStyle.Flat;
+            addCategory.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            addCategory.Location = new Point(54, 139);
+            addCategory.Name = "addCategory";
+            addCategory.Size = new Size(104, 40);
+            addCategory.TabIndex = 9;
+            addCategory.Text = "ADD";
+            addCategory.UseVisualStyleBackColor = false;
+            addCategory.Click += addCategory_Click;
             // 
             // label1
             // 
@@ -119,21 +122,24 @@
             // panel2
             // 
             panel2.BackColor = Color.PowderBlue;
-            panel2.Controls.Add(dataGridView1);
+            panel2.Controls.Add(dataGridCategory);
             panel2.Controls.Add(label);
             panel2.Location = new Point(14, 18);
             panel2.Name = "panel2";
             panel2.Size = new Size(542, 614);
             panel2.TabIndex = 1;
             // 
-            // dataGridView1
+            // dataGridCategory
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(31, 67);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(468, 473);
-            dataGridView1.TabIndex = 1;
+            dataGridCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridCategory.Location = new Point(31, 71);
+            dataGridCategory.Name = "dataGridCategory";
+            dataGridCategory.ReadOnly = true;
+            dataGridCategory.RowHeadersWidth = 51;
+            dataGridCategory.Size = new Size(468, 473);
+            dataGridCategory.TabIndex = 1;
+            dataGridCategory.CellClick += dataGridCategory_CellClick;
             // 
             // label
             // 
@@ -148,33 +154,33 @@
             // panel3
             // 
             panel3.BackColor = Color.PowderBlue;
-            panel3.Controls.Add(textBox2);
-            panel3.Controls.Add(button6);
+            panel3.Controls.Add(searchCategoryTxt);
+            panel3.Controls.Add(searchCategoryBttn);
             panel3.Controls.Add(label2);
             panel3.Location = new Point(583, 18);
             panel3.Name = "panel3";
             panel3.Size = new Size(346, 218);
             panel3.TabIndex = 13;
             // 
-            // textBox2
+            // searchCategoryTxt
             // 
-            textBox2.Location = new Point(35, 71);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(262, 27);
-            textBox2.TabIndex = 12;
+            searchCategoryTxt.Location = new Point(35, 71);
+            searchCategoryTxt.Name = "searchCategoryTxt";
+            searchCategoryTxt.Size = new Size(262, 27);
+            searchCategoryTxt.TabIndex = 12;
             // 
-            // button6
+            // searchCategoryBttn
             // 
-            button6.BackColor = Color.CadetBlue;
-            button6.Cursor = Cursors.Hand;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            button6.Location = new Point(35, 127);
-            button6.Name = "button6";
-            button6.Size = new Size(262, 39);
-            button6.TabIndex = 9;
-            button6.Text = "SEARCH";
-            button6.UseVisualStyleBackColor = false;
+            searchCategoryBttn.BackColor = Color.CadetBlue;
+            searchCategoryBttn.Cursor = Cursors.Hand;
+            searchCategoryBttn.FlatStyle = FlatStyle.Flat;
+            searchCategoryBttn.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            searchCategoryBttn.Location = new Point(35, 127);
+            searchCategoryBttn.Name = "searchCategoryBttn";
+            searchCategoryBttn.Size = new Size(262, 39);
+            searchCategoryBttn.TabIndex = 9;
+            searchCategoryBttn.Text = "SEARCH";
+            searchCategoryBttn.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -195,11 +201,12 @@
             Controls.Add(panel1);
             Name = "Category";
             Size = new Size(942, 655);
+            Load += Category_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridCategory).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -209,16 +216,16 @@
 
         private Panel panel1;
         private Panel panel2;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridCategory;
         private Label label;
         private Label label1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private TextBox textBox1;
+        private Button deleteCategory;
+        private Button updateCategory;
+        private Button addCategory;
+        private TextBox categoryTxt;
         private Panel panel3;
-        private TextBox textBox2;
-        private Button button6;
+        private TextBox searchCategoryTxt;
+        private Button searchCategoryBttn;
         private Label label2;
     }
 }
