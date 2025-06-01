@@ -33,21 +33,23 @@
             labelDashboardTitle = new Label();
             labelClose = new Label();
             panel1 = new Panel();
+            userBttn = new Button();
             panel3 = new Panel();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            logoutBttn = new Button();
+            logsBttn = new Button();
+            borrowBttn = new Button();
+            categoryBttn = new Button();
+            booksBttn = new Button();
+            homeBttn = new Button();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            home1 = new Home();
+            users1 = new Users();
             borrow1 = new Borrow();
             logs1 = new Logs();
             category1 = new Category();
             books1 = new Books();
-            home1 = new Home();
             panelTopDashboard.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -91,13 +93,14 @@
             // panel1
             // 
             panel1.BackColor = Color.PowderBlue;
+            panel1.Controls.Add(userBttn);
             panel1.Controls.Add(panel3);
-            panel1.Controls.Add(button6);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(logoutBttn);
+            panel1.Controls.Add(logsBttn);
+            panel1.Controls.Add(borrowBttn);
+            panel1.Controls.Add(categoryBttn);
+            panel1.Controls.Add(booksBttn);
+            panel1.Controls.Add(homeBttn);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
@@ -106,6 +109,23 @@
             panel1.Size = new Size(227, 660);
             panel1.TabIndex = 1;
             // 
+            // userBttn
+            // 
+            userBttn.FlatAppearance.BorderSize = 0;
+            userBttn.FlatStyle = FlatStyle.Flat;
+            userBttn.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userBttn.Image = (Image)resources.GetObject("userBttn.Image");
+            userBttn.ImageAlign = ContentAlignment.MiddleLeft;
+            userBttn.Location = new Point(3, 370);
+            userBttn.Name = "userBttn";
+            userBttn.Padding = new Padding(7, 0, 0, 0);
+            userBttn.Size = new Size(221, 49);
+            userBttn.TabIndex = 8;
+            userBttn.Text = "        USERS";
+            userBttn.TextAlign = ContentAlignment.MiddleLeft;
+            userBttn.UseVisualStyleBackColor = true;
+            userBttn.Click += button7_Click;
+            // 
             // panel3
             // 
             panel3.Location = new Point(227, 0);
@@ -113,107 +133,108 @@
             panel3.Size = new Size(947, 660);
             panel3.TabIndex = 0;
             // 
-            // button6
+            // logoutBttn
             // 
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(3, 565);
-            button6.Name = "button6";
-            button6.Padding = new Padding(10, 0, 0, 0);
-            button6.Size = new Size(221, 49);
-            button6.TabIndex = 7;
-            button6.Text = "       LOG OUT";
-            button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            logoutBttn.FlatAppearance.BorderSize = 0;
+            logoutBttn.FlatStyle = FlatStyle.Flat;
+            logoutBttn.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            logoutBttn.Image = (Image)resources.GetObject("logoutBttn.Image");
+            logoutBttn.ImageAlign = ContentAlignment.MiddleLeft;
+            logoutBttn.Location = new Point(3, 565);
+            logoutBttn.Name = "logoutBttn";
+            logoutBttn.Padding = new Padding(10, 0, 0, 0);
+            logoutBttn.Size = new Size(221, 49);
+            logoutBttn.TabIndex = 7;
+            logoutBttn.Text = "       LOG OUT";
+            logoutBttn.TextAlign = ContentAlignment.MiddleLeft;
+            logoutBttn.UseVisualStyleBackColor = true;
+            logoutBttn.Click += button6_Click;
             // 
-            // button5
+            // logsBttn
             // 
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(3, 410);
-            button5.Name = "button5";
-            button5.Padding = new Padding(10, 0, 0, 0);
-            button5.Size = new Size(221, 49);
-            button5.TabIndex = 6;
-            button5.Text = "       LOGS";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            logsBttn.FlatAppearance.BorderSize = 0;
+            logsBttn.FlatStyle = FlatStyle.Flat;
+            logsBttn.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            logsBttn.Image = (Image)resources.GetObject("logsBttn.Image");
+            logsBttn.ImageAlign = ContentAlignment.MiddleLeft;
+            logsBttn.Location = new Point(3, 425);
+            logsBttn.Name = "logsBttn";
+            logsBttn.Padding = new Padding(10, 0, 0, 0);
+            logsBttn.Size = new Size(221, 49);
+            logsBttn.TabIndex = 6;
+            logsBttn.Text = "       LOGS";
+            logsBttn.TextAlign = ContentAlignment.MiddleLeft;
+            logsBttn.UseVisualStyleBackColor = true;
+            logsBttn.Click += button5_Click;
             // 
-            // button4
+            // borrowBttn
             // 
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(3, 362);
-            button4.Name = "button4";
-            button4.Padding = new Padding(10, 0, 0, 0);
-            button4.Size = new Size(221, 49);
-            button4.TabIndex = 5;
-            button4.Text = "       BORROW";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            borrowBttn.FlatAppearance.BorderSize = 0;
+            borrowBttn.FlatStyle = FlatStyle.Flat;
+            borrowBttn.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            borrowBttn.Image = (Image)resources.GetObject("borrowBttn.Image");
+            borrowBttn.ImageAlign = ContentAlignment.MiddleLeft;
+            borrowBttn.Location = new Point(3, 320);
+            borrowBttn.Name = "borrowBttn";
+            borrowBttn.Padding = new Padding(10, 0, 0, 0);
+            borrowBttn.Size = new Size(221, 49);
+            borrowBttn.TabIndex = 5;
+            borrowBttn.Text = "       BORROW";
+            borrowBttn.TextAlign = ContentAlignment.MiddleLeft;
+            borrowBttn.UseVisualStyleBackColor = true;
+            borrowBttn.Click += button4_Click;
             // 
-            // button3
+            // categoryBttn
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(3, 314);
-            button3.Name = "button3";
-            button3.Padding = new Padding(10, 0, 0, 0);
-            button3.Size = new Size(221, 49);
-            button3.TabIndex = 4;
-            button3.Text = "       CATEGORY";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            categoryBttn.FlatAppearance.BorderSize = 0;
+            categoryBttn.FlatStyle = FlatStyle.Flat;
+            categoryBttn.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            categoryBttn.Image = (Image)resources.GetObject("categoryBttn.Image");
+            categoryBttn.ImageAlign = ContentAlignment.MiddleLeft;
+            categoryBttn.Location = new Point(3, 480);
+            categoryBttn.Name = "categoryBttn";
+            categoryBttn.Padding = new Padding(10, 0, 0, 0);
+            categoryBttn.Size = new Size(221, 49);
+            categoryBttn.TabIndex = 4;
+            categoryBttn.Text = "       CATEGORY";
+            categoryBttn.TextAlign = ContentAlignment.MiddleLeft;
+            categoryBttn.UseVisualStyleBackColor = true;
+            categoryBttn.Visible = false;
+            categoryBttn.Click += button3_Click;
             // 
-            // button2
+            // booksBttn
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(3, 266);
-            button2.Name = "button2";
-            button2.Padding = new Padding(10, 0, 0, 0);
-            button2.Size = new Size(221, 49);
-            button2.TabIndex = 3;
-            button2.Text = "       BOOKS";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            booksBttn.FlatAppearance.BorderSize = 0;
+            booksBttn.FlatStyle = FlatStyle.Flat;
+            booksBttn.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            booksBttn.Image = (Image)resources.GetObject("booksBttn.Image");
+            booksBttn.ImageAlign = ContentAlignment.MiddleLeft;
+            booksBttn.Location = new Point(3, 266);
+            booksBttn.Name = "booksBttn";
+            booksBttn.Padding = new Padding(10, 0, 0, 0);
+            booksBttn.Size = new Size(221, 49);
+            booksBttn.TabIndex = 3;
+            booksBttn.Text = "       BOOKS";
+            booksBttn.TextAlign = ContentAlignment.MiddleLeft;
+            booksBttn.UseVisualStyleBackColor = true;
+            booksBttn.Click += button2_Click;
             // 
-            // button1
+            // homeBttn
             // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(3, 218);
-            button1.Name = "button1";
-            button1.Padding = new Padding(10, 0, 0, 0);
-            button1.Size = new Size(221, 49);
-            button1.TabIndex = 2;
-            button1.Text = "       HOME";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            homeBttn.FlatAppearance.BorderSize = 0;
+            homeBttn.FlatStyle = FlatStyle.Flat;
+            homeBttn.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            homeBttn.Image = (Image)resources.GetObject("homeBttn.Image");
+            homeBttn.ImageAlign = ContentAlignment.MiddleLeft;
+            homeBttn.Location = new Point(3, 218);
+            homeBttn.Name = "homeBttn";
+            homeBttn.Padding = new Padding(10, 0, 0, 0);
+            homeBttn.Size = new Size(221, 49);
+            homeBttn.TabIndex = 2;
+            homeBttn.Text = "       HOME";
+            homeBttn.TextAlign = ContentAlignment.MiddleLeft;
+            homeBttn.UseVisualStyleBackColor = true;
+            homeBttn.Click += button1_Click;
             // 
             // label1
             // 
@@ -238,6 +259,7 @@
             // panel2
             // 
             panel2.Controls.Add(home1);
+            panel2.Controls.Add(users1);
             panel2.Controls.Add(borrow1);
             panel2.Controls.Add(logs1);
             panel2.Controls.Add(category1);
@@ -247,6 +269,20 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(947, 660);
             panel2.TabIndex = 2;
+            // 
+            // home1
+            // 
+            home1.Location = new Point(0, 0);
+            home1.Name = "home1";
+            home1.Size = new Size(947, 662);
+            home1.TabIndex = 2;
+            // 
+            // users1
+            // 
+            users1.Location = new Point(0, -3);
+            users1.Name = "users1";
+            users1.Size = new Size(947, 660);
+            users1.TabIndex = 2;
             // 
             // borrow1
             // 
@@ -276,13 +312,6 @@
             books1.Name = "books1";
             books1.Size = new Size(944, 660);
             books1.TabIndex = 0;
-            // 
-            // home1
-            // 
-            home1.Location = new Point(0, 0);
-            home1.Name = "home1";
-            home1.Size = new Size(947, 660);
-            home1.TabIndex = 8;
             // 
             // Dashboard
             // 
@@ -314,18 +343,20 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label1;
-        private Button button1;
-        private Button button2;
-        private Button button4;
-        private Button button3;
-        private Button button5;
-        private Button button6;
+        private Button homeBttn;
+        private Button booksBttn;
+        private Button borrowBttn;
+        private Button categoryBttn;
+        private Button logsBttn;
+        private Button logoutBttn;
+        private Home home1;
         private Panel panel3;
         private Panel panel2;
         private Books books1;
         private Category category1;
         private Borrow borrow1;
         private Logs logs1;
-        private Home home1;
+        private Button userBttn;
+        private Users users1;
     }
 }
